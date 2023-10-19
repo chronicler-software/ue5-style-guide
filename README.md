@@ -82,7 +82,7 @@ If you have made a notable fork or translation that is not suitable for a pull r
     - [2.2.3 Samples, Templates, and Marketplace Content Are Risk-Free](#2.2.3)
     - [2.2.4 DLC, Sub-Projects, and Patches Are Easily Maintained](#2.2.4)
   - [2.3 Use Developers Folder For Local Testing](#structure-developers)
-  - [2.4 All Map<sup>*</sup> Files Belong In A Folder Called Maps](#structure-maps)
+  - [2.4 All Level<sup>*</sup> Files Belong In A Folder Called Levels](#structure-levels)
   - [2.5 Use A `Core` Folder For Critical Blueprints And Other Assets](#structure-core)
   - [2.6 Do Not Create Folders Called `Assets` or `AssetTypes`](#structure-assettypes)
     - [2.6.1 Creating a folder named `Assets` is redundant](#2.6.1)
@@ -335,7 +335,7 @@ When naming an asset, use these tables to determine the prefix and suffix to use
 
 | Asset Type              | Prefix     | Suffix     | Notes                            |
 | ----------------------- | ---------- | ---------- | -------------------------------- |
-| Level / Map             |            |            | [Should be in a folder called Maps.](#2.4) |
+| Level / Map             |            |            | [Should be in a folder called Levels.](#2.4) |
 | Level (Persistent)      |            | _P         |                                  |
 | Level (Audio)           |            | _Audio     |                                  |
 | Level (Lighting)        |            | _Lighting  |                                  |
@@ -584,7 +584,7 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
         |   |-- Electrical
         |   |-- Fire
         |   |-- Weather
-        |-- <a href="#2.4">Maps</a>
+        |-- <a href="#2.4">Levels</a>
         |   |-- Campaign1
         |   |-- Campaign2
         |-- <a href="#2.8">MaterialLibrary</a>
@@ -700,14 +700,14 @@ If these modular assets were placed in a Developer folder, the world builder sho
 Once the assets are ready for use, an artist simply has to move the assets into the project specific folder and fix up redirectors. This is essentially 'promoting' the assets from experimental to production.
 
 <a name="2.4"></a>
-<a name="structure-maps"></a>
-### 2.4 All Map[<sup>*</sup>](#terms-level-map) Files Belong In A Folder Called Maps
+<a name="structure-levels"></a>
+### 2.4 All Level[<sup>*</sup>](#terms-level-map) Files Belong In A Folder Called Levels
 
-Map files are incredibly special and it is common for every project to have its own map naming system, especially if they work with sub-levels or streaming levels. No matter what system of map organization is in place for the specific project, all levels should belong in `/Content/Project/Maps`.
+Map files are incredibly special and it is common for every project to have its own map naming system, especially if they work with sub-levels or streaming levels. No matter what system of map organization is in place for the specific project, all levels should belong in `/Content/Project/Levels`.
 
-Being able to tell someone to open a specific map without having to explain where it is is a great time saver and general 'quality of life' improvement. It is common for levels to be within sub-folders of `Maps`, such as `Maps/Campaign1/` or `Maps/Arenas`, but the most important thing here is that they all exist within `/Content/Project/Maps`.
+Being able to tell someone to open a specific map without having to explain where it is is a great time saver and general 'quality of life' improvement. It is common for levels to be within sub-folders of `Levels`, such as `Levels/Campaign1/` or `Levels/Arenas`, but the most important thing here is that they all exist within `/Content/Project/Levels`.
 
-This also simplifies the job of cooking for engineers. Wrangling levels for a build process can be extremely frustrating if they have to dig through arbitrary folders for them. If a team's maps are all in one place, it is much harder to accidentally not cook a map in a build. It also simplifies lighting build scripts as well as QA processes.
+This also simplifies the job of cooking for engineers. Wrangling levels for a build process can be extremely frustrating if they have to dig through arbitrary folders for them. If a team's levels are all in one place, it is much harder to accidentally not cook a map in a build. It also simplifies lighting build scripts as well as QA processes.
 
 <a name="2.5"></a>
 <a name="structure-core"></a>
